@@ -18,9 +18,16 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env', '@babel/preset-react'].map(require.resolve),
+              plugins: [
+                "@babel/plugin-proposal-class-properties"
+              ]
             },
           },
         ],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       },
     ],
   },
